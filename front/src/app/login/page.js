@@ -5,7 +5,7 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { loginSuccess } from '../store/slice/authSlice';
 import { useRouter } from 'next/navigation';
-export default function page() {
+export default function Page() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const dispatch = useDispatch();
@@ -47,7 +47,7 @@ export default function page() {
                 </div>
                 <div class="mb-5">
                     <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your password</label>
-                    <input type="password" id="password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm block w-full p-2.5" required placeholder="Password" name='passowrd' value={password} onChange={(e) => setPassword(e.target.value)} />
+                    <input type="password" id="password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm block w-full p-2.5" required placeholder="Password" name='password' value={password} onChange={(e) => setPassword(e.target.value)} />
                 </div>
                 <button type="submit" class="text-white bg-blue-700 font-medium mx-[150px] text-sm w-full sm:w-auto px-5 py-2.5 text-center">Login</button>
                 <p className="my-4">Do not have an account <Link href={'/'} className="text-blue-500">Register</Link></p>
