@@ -40,16 +40,16 @@ export default function Page() {
     };
     return (
         <div>
-            <form class="max-w-sm mx-auto" onSubmit={handleSubmit}>
-                <div class="mb-5 mt-[100px]">
-                    <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email Address</label>
-                    <input type="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm block w-full p-2.5" placeholder="Email" required name='email' value={email} onChange={(e) => setEmail(e.target.value)} />
+            <form className="max-w-sm mx-auto" onSubmit={handleSubmit}>
+                <div className="mb-5 mt-[100px]">
+                    <label for="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email Address</label>
+                    <input type="email" id="email" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm block w-full p-2.5" placeholder="Email" required name='email' value={email} onChange={(e) => setEmail(e.target.value)} />
                 </div>
-                <div class="mb-5">
-                    <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your password</label>
-                    <input type="password" id="password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm block w-full p-2.5" required placeholder="Password" name='password' value={password} onChange={(e) => setPassword(e.target.value)} />
+                <div className="mb-5">
+                    <label for="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your password</label>
+                    <input type="password" id="password" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm block w-full p-2.5" required placeholder="Password" name='password' value={password} onChange={(e) => setPassword(e.target.value)} />
                 </div>
-                <button type="submit" class="text-white bg-blue-700 font-medium mx-[150px] text-sm w-full sm:w-auto px-5 py-2.5 text-center">Login</button>
+                <button type="submit" className="text-white bg-blue-700 font-medium mx-[150px] text-sm w-full sm:w-auto px-5 py-2.5 text-center">Login</button>
                 <p className="my-4">Do not have an account <Link href={'/'} className="text-blue-500">Register</Link></p>
             </form>
         </div>
