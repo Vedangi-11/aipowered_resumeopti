@@ -10,7 +10,7 @@ export default function Page() {
     const [jobRole, setJobRole] = useState('');
     const [loading, setLoading] = useState(false);
     const [resumeSubmitted, setResumeSubmitted] = useState(false);
-
+    const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api";
     const handleFileChange = (e) => {
         const selectedFile = e.target.files[0];
         if (selectedFile && selectedFile.type === "application/pdf") {
@@ -34,7 +34,7 @@ export default function Page() {
     setLoading(true);
 
     try {
-        const response = await axios.post('http://localhost:5000/api/resume/process', formData);
+        const response = await axios.post(`${API_BASE}/resume/process`, formData);
         const { score, optimizationMessage, recommendedJobs } = response.data;
 
         setScore(score);

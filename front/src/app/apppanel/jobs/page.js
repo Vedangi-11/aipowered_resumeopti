@@ -6,7 +6,7 @@ function Page() {
   const [searchQuery, setSearchQuery] = useState('');
   const [jobs, setJobs] = useState([]);
   const [error, setError] = useState(null);
-
+  const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api";
   const fetchJobs = async () => {
     if (!searchQuery.trim()) {
       setError('Please enter a job title to search.');
@@ -14,7 +14,7 @@ function Page() {
     }
     setError(null);
     try {
-      const response = await axios.get(`http://localhost:5000/api/jobs/jobbyname?query=${searchQuery}`);
+      const response = await axios.get(`${API_BASE}/jobs/jobbyname?query=${searchQuery}`);
       if (response.status!==200) {
         throw new Error('Failed to fetch jobs');
       }
