@@ -2,10 +2,10 @@
 export const dynamic = 'force-dynamic';
 
 import { useRouter, useSearchParams } from 'next/navigation';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Suspense } from 'react';
 import { useSelector } from 'react-redux';
 
-export default function Page() {
+function AppPanelContent() {
   const nav = useRouter();
   const searchParams = useSearchParams();
   const auth = useSelector((state) => state.auth);
@@ -40,5 +40,13 @@ export default function Page() {
         <p>Redirecting to login...</p>
       )}
     </div>
+  );
+}
+
+export default function Page() {
+  return (
+    <Suspense fallback={<p>Loading App Panel...</p>}>
+      <AppPanelContent />
+    </Suspense>
   );
 }
